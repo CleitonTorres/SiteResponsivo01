@@ -17,28 +17,30 @@ function Navbar(){
         
     })
 
-    function toggleMenu(){
-        //const menuToggle = document.querySelector('.menuToggle');
-        //menuToggle.classList.toggle('active');
-        toggleClass !== 'active' ? setToggleClass('active')
-        : setToggleClass('menuToggle')
-
-        navigateActiveClass !== 'activeNavigateToggle' ? setnavigateActiveClass('activeNavigateToggle')
-        : setnavigateActiveClass ('navigation')
+    function toggleMenu(type){
+        var altura = window.screen.height;
+        var largura = window.screen.width;
+        if (largura <= 991){
+            toggleClass !== 'active' ? setToggleClass('active')
+            : setToggleClass('menuToggle')
+    
+            navigateActiveClass !== 'activeNavigateToggle' ? setnavigateActiveClass('activeNavigateToggle')
+            : setnavigateActiveClass ('navigation')
+        }
     }
 
     return(
         <header>
             <nav className={`${styles.nav} ${styles[stickyClass]}`}>
                 <a href="#" className={styles.logo}>Logo<span>.</span></a>
-                <div className={styles[toggleClass]} onClick={()=> toggleMenu()}></div>
+                <div className={styles[toggleClass]} onClick={()=> toggleMenu('toggle')}></div>
                 <ul className={styles[navigateActiveClass]}>
-                    <li><a href="#banner">Home</a></li>
-                    <li><a href="#about">Sobre nós</a></li>
-                    <li><a href="#section01">Sessão 01</a></li>
-                    <li><a href="#section02">Sessão 02</a></li>
-                    <li><a href="#section03">Sessão 03</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#banner" onClick={()=> toggleMenu('nav')}>Home</a></li>
+                    <li><a href="#about" onClick={()=> toggleMenu('nav')}>Sobre nós</a></li>
+                    <li><a href="#section01" onClick={()=> toggleMenu('nav')}>Sessão 01</a></li>
+                    <li><a href="#section02" onClick={()=> toggleMenu('nav')}>Sessão 02</a></li>
+                    <li><a href="#section03" onClick={()=> toggleMenu('nav')}>Sessão 03</a></li>
+                    <li><a href="#contact" onClick={()=> toggleMenu('nav')}>Contato</a></li>
                 </ul>
             </nav>
         </header>

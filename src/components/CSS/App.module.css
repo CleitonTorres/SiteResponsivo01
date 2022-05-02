@@ -134,6 +134,7 @@ section {
     color: #111;
     font-size: 2em;
     font-weight: 300;
+    text-align: center;
 }   
 
 .titleText span {
@@ -166,6 +167,7 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .section01 .content {
@@ -422,6 +424,9 @@ section {
         align-items: center;
         flex-direction: column;
         background: #fff; 
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border: #111 solid 20px;
     }
     .activeNavigateToggle li {
         list-style: none;
